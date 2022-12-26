@@ -21,7 +21,7 @@ function tambah($data) {
 	$nama = htmlspecialchars($data["nama"]);
 	$stok = htmlspecialchars($data["stok"]);
 
-	$query = "INSERT INTO mahasiswa
+	$query = "INSERT INTO barang
 				VALUES
 			  ('$id', '$nama', '$stok')
 			";

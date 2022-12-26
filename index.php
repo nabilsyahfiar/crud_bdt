@@ -13,44 +13,50 @@ if (isset($_POST["cari"])) {
 
 <head>
   <title>Halaman Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
   <h1>Daftar barang</h1>
 
-  <a href="tambah.php">Tambah data barang</a>
+  <a href="tambah.php" class="edit">Tambah data barang</a>
   <br><br>
 
   <form action="" method="post">
 
-    <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
-    <button type="submit" name="cari">Cari!</button>
+    <input type="text" name="keyword" class="search-input" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
+    <button type="submit" name="cari" class="search-button">Cari!</button>
 
   </form>
 
   <br>
-  <table border="1" cellpadding="10" cellspacing="0">
+  <table class="content-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nama</th>
+        <th>Stok</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
 
-    <tr>
-      <th>ID</th>
-      <th>Aksi</th>
-      <th>Nama</th>
-      <th>Stok</th>
-    </tr>
-
-    <?php foreach ($barang as $row) : ?>
+    <tbody>
+      <?php foreach ($barang as $row) : ?>
       <tr>
         <td><?= $row["id"]; ?></td>
-        <td>
-          <a href="ubah.php?id=<?= $row["id"]; ?>">ubah</a> |
-          <a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">hapus</a>
-        </td>
         <td><?= $row["nama"]; ?></td>
         <td><?= $row["stok"]; ?></td>
+        <td>
+          <a href="ubah.php?id=<?= $row["id"]; ?>" class="edit">ubah</a>
+          <a href="hapus.php?id=<?= $row["id"]; ?>" class="delete" onclick="return confirm('yakin?');">hapus</a>
+        </td>
       </tr>
-    <?php endforeach; ?>
-
+      <?php endforeach; ?>
+    </tbody>
   </table>
 
 </body>

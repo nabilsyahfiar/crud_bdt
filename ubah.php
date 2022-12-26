@@ -34,31 +34,35 @@ if (isset($_POST["submit"])) {
 
 <head>
   <title>Ubah data barang</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <h1>Ubah data barang</h1>
 
   <form action="" method="post">
-    <input type="hidden" name="id" value="<?= $brg["id"]; ?>">
-    <ul>
-      <li>
-        <label for="nrp">ID : </label>
-        <input type="text" name="id" id="nrp" required value="<?= $brg["id"]; ?>" disabled>
-      </li>
-      <li>
-        <label for="nama">Nama : </label>
-        <input type="text" name="nama" id="nama" value="<?= $brg["nama"]; ?>">
-      </li>
-      <li>
-        <label for="stok">Stok :</label>
-        <input type="text" name="stok" id="stok" value="<?= $brg["stok"]; ?>">
-      </li>
-      <li>
-        <button type="submit" name="submit">Ubah Data!</button>
-      </li>
-    </ul>
-
+    <table class="content-table">
+      <input type="hidden" name="id" value="<?= $brg["id"]; ?>">
+      <tr>
+        <td><label for="id">ID</label></td>
+        <td><input type="text" name="id" id="id" class="add-input" required value="<?= $brg["id"]; ?>" disabled></td>
+      </tr>
+      <tr>
+        <td><label for="nama">Nama</label></td>
+        <td><input type="text" name="nama" id="nama" class="add-input" value="<?= $brg["nama"]; ?>"></td>
+      </tr>
+      <tr>
+        <td><label for="stok">Stok</label></td>
+        <td><input type="text" name="stok" id="stok" class="add-input" value="<?= $brg["stok"]; ?>"></td>
+      </tr>
+      <tr style="text-align: right;">
+        <td></td>
+        <td><button type="submit" name="submit" class="search-button">Ubah Data!</button></td>
+      </tr>
+    </table>
   </form>
 </body>
 

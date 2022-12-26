@@ -27,30 +27,34 @@ if (isset($_POST["submit"])) {
 
 <head>
   <title>Tambah data barang</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <h1>Tambah data barang</h1>
 
   <form action="" method="post">
-    <ul>
-      <li>
-        <label for="id">ID : </label>
-        <input type="text" name="id" id="id" required>
-      </li>
-      <li>
-        <label for="nama">Nama : </label>
-        <input type="text" name="nama" id="nama">
-      </li>
-      <li>
-        <label for="stok">Stok :</label>
-        <input type="text" name="stok" id="stok">
-      </li>
-      <li>
-        <button type="submit" name="submit">Tambah Data!</button>
-      </li>
-    </ul>
-
+    <table class="content-table">
+      <tr>
+        <td><label for="id">ID</label></td>
+        <td><input type="text" name="id" id="id" class="add-input" required ></td>
+      </tr>
+      <tr>
+        <td><label for="nama">Nama</label></td>
+        <td><input type="text" name="nama" id="nama" class="add-input"></td>
+      </tr>
+      <tr>
+        <td><label for="stok">Stok</label></td>
+        <td><input type="text" name="stok" id="stok" class="add-input"></td>
+      </tr>
+      <tr style="text-align: right;">
+        <td></td>
+        <td><button type="submit" name="submit" class="search-button">Tambah Data!</button></td>
+      </tr>
+    </table>
   </form>
 </body>
 
